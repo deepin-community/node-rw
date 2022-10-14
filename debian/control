@@ -1,0 +1,33 @@
+Source: node-rw
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13)
+ , nodejs
+ , node-d3-queue
+ , pkg-js-tools (>= 0.9.26~)
+Standards-Version: 4.5.1
+Homepage: https://github.com/mbostock/rw
+Vcs-Git: https://salsa.debian.org/js-team/node-rw.git
+Vcs-Browser: https://salsa.debian.org/js-team/node-rw
+Rules-Requires-Root: no
+
+Package: node-rw
+Architecture: all
+Depends:
+ ${misc:Depends}
+ , nodejs
+ , node-d3-queue
+Description: provide file like interface to stdin and stdout
+ The rw provides an interface just like readFile, readFileSync, writeFile and
+ writeFileSync, but with implementations that work the way you expect on stdin
+ and stdout.
+ .
+ If you use these methods on files other than /dev/stdin or
+ /dev/stdout, they simply delegate to the fs methods, so you can trust that
+ they behave identically to the methods you’re used to.
+ .
+ Node.js is an event-based server-side JavaScript engine.
